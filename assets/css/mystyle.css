@@ -1,0 +1,91 @@
+.custom-back {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-flex-nav {
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+}
+.container-flex-object>div {
+  border: dotted blue 2px;
+  
+}
+
+.container-flex-object {
+  height: 500px;
+  width: 500px;
+  background-color: rgb(87, 154, 87);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-around;
+  flex-wrap: wrap;
+
+
+  
+  /* CLASES Y PROPIEDADES FLEX */
+
+  /*  display: flex -> el elemento es visible y va a tener propiedades flex */
+  /*  display: block -> el elemento es visible */
+  /*  display: none -> el elemento es NO ES VISIBLE */
+
+  /* justyify-content: center -> centrarme los elementos del interior en el centro SIN respetar
+  espacio */
+  /* justyify-content: space-between -> respetarme espacio equidistante tocando los limites*/
+  /* justyify-content: space-around -> respetarme espacio equidistante sin tocar los limites*/
+  /* justyify-content: flex-end o flex-start -> alinea los elementos en función del principio y el final
+  de la row en que están contenidos*/
+
+  /* align-items: center -> centra verticalmente los elementos */
+  /* align-items: flex-end o flex-start -> alinea verticalmente los elementos al final
+  o al principio */
+
+  /*flex-direction: row -> una fila, o invertida si es 'row-reverse'*/
+  /*flex-direction: column -> una columna, o invertida si es 'column-reverse'*/
+
+  /* flex-wrap: wrap -> hace que los elementos en función del tamaño del navegador
+  vayan saltando debajo uno de otro. Su contrario 'no-wrap'*/
+}
+.algo {
+  background: blue;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.square {
+  border-radius: 5px;
+  color: white;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.38);
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.38);
+}
+/* 
+@media only screen and (max-width: 700px) {
+  body {
+    background-color: red;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  body {
+    background-color: blue;
+  }
+
+  .square {
+    display: none;
+  }
+}
+ */

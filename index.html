@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Library Store</title>
+
+
+   <!--  se utiliza bootswacht para mejores temas  -->
+<link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.css">
+<link rel="stylesheet" href="./assets/css/index.css">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-light justify-content-between p-2">
+        <div class="div-flex-nav">
+            <a href="/index.html" class="navbar-brand">Library Store</a>
+
+            <a class="pl-3 pr-3" href="index.html" >Home</a>
+            <a  class="pl-3 pr-3" href="./sales.html" >Sales</a>
+            <a class="pl-3 pr-3" href="./about.html" >About</a>
+            
+        </div>
+    
+    
+    </nav>
+
+</nav>
+<div class="container p-4 " >
+    <div class="row">
+        <div class="col-md-4">
+            <form id="book-form" class="card card-body shadow">
+                <div class="input-group mb-2">
+                    <input type="text" id="title" class="form-control" placeholder="Book Title" autofocus>
+
+                </div>
+                <div class="input-group mb-2">
+                     <input type="text" id="author" class="form-control " placeholder="Author">
+                </div>
+                <div class="input-group mb-2">
+                     <input type="text" id="isbn" class="form-control" placeholder="ISBN">
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" id="rating" class="form-control" placeholder="Rating">
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" id="price" class="form-control" placeholder="Price">
+                </div>
+                <div class="form-label mt-2 mb-3 ">
+                    <input type="url" name="url" id="photoUrl" placeholder="Photo Url address" class="form-control ">
+                </div>
+                <button class="btn btn-primary" id="previewBotton">
+                    Preview Book
+                </button>
+
+
+            </form>
+        </div>
+        <div  class="col-md-8" id="book-cards">
+            book-cards
+
+      <!--       <div class="card " >
+                <img src=${photoUrl} class="card-img-top" alt="...">
+                <div class="card-body row">
+                <h4 class="card-title">Book title: </h4><h4>${title}</h4>
+                <h6 class="card-title">Author :</h6><h6>${author}</h6>
+                <h6 class="card-title">ISBN: </h6></h6><h6>${isbn}</h6>
+                <h6 class="card-title">Rating: </h6></h6><h6>${rating}</h6>
+                    <br>
+                    <h5 class="card-title">Price:</h5><h5>${price}</h5>
+    
+                    <button href="http://www.google.com" id="setBookOnSaleBotton" target="blank" class="btn btn-primary">Set Book On Sale</button>
+                 </div>
+              </div>   -->
+
+
+        
+        </div>
+
+</div>
+<script type="module" src="./assets/js/app.js"></script>
+</body>
+</html>
+
+
