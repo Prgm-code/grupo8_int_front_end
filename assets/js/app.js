@@ -81,7 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains("delete")) {
             
             delete books[e.target.getAttribute('_id')]; // elimina el libro del arreglo books
+            
             printBooks(books);
+            console.log(JSON.stringify(books))
         };
 
     
@@ -120,8 +122,8 @@ const printBooks = function (books) {
          `
       bookCards.appendChild(div)
       
-      localStorage.setItem('books', JSON.stringify(books)) ; // guarda en el Local Storage el arreglo books como string 
-    
-
     });
+    localStorage.setItem('books', JSON.stringify(books)) ; // guarda en el Local Storage el arreglo books como string 
+    console.log(books)
+
 }
