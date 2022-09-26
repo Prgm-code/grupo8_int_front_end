@@ -1,6 +1,9 @@
 
 // definicion variables
-const bookCards = document.querySelector('#book-cards');
+import { renderMessage , printBooks } from "../js/UI.js";
+
+
+
 let books = {};
 
 // inicia al finalizar carga del Dom
@@ -56,11 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (book.rating === "") ratingInput.classList.add('is-invalid');
         if (book.price === "") priceInput.classList.add('is-invalid');
         if (book.photoUrl === "") photoUrlInput.classList.add('is-invalid');
+        
 
         if (book.title !== "" && book.author !== "" && book.isbn !== "" && book.rating !== "" && book.photoUrl !== "" && book.price !== "") {
             allInputs.forEach(input => {
                 input.classList.remove('is-invalid');
+               
             });
+            
+            renderMessage('New Book Added', 'success', '3000');
 
             printBooks(books); // llama a funcion para mostrar los books
 
@@ -72,6 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
             priceInput.value = "";
             photoUrlInput.value ="";
 
+        }else{
+            renderMessage('Must Complete all fields', 'danger', '5000');
         }
 
     });
@@ -81,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains("delete")) {
             
             delete books[e.target.getAttribute('_id')]; // elimina el libro del arreglo books
+            renderMessage('Book Removed', 'danger', '2000')
             
             printBooks(books);
             console.log(JSON.stringify(books))
@@ -95,35 +105,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-
-// funcion para mostrar en pantalla los libro presentes en el arreglo books 
-const printBooks = function (books) {
-    bookCards.innerHTML = '';
-    Object.values(books).forEach(itemBook =>{
-
-        const div = document.createElement('div');
-        div.className = 'col-md-8 mb-3';
-        div.innerHTML = `
-            <div class="card shadow ">
-            <img src=${itemBook.photoUrl} class="card-img-top" alt="...">
-                <div class="card-body ">
-                    <h5 class="card-title">Book Title:</h5>
-                    <p class="card-text"><strong>${itemBook.title}</strong></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item"><div>Author:</div><div>${itemBook.author}</div></li>
-                <li class="list-group-item"><div>ISBN:</div><div> ${itemBook.isbn}</div></li>
-                <li class="list-group-item"><div>Rating:</div><div>${itemBook.rating}</div></li>
-                <li class="list-group-item"><div>Price:</div><div>$ ${itemBook.price}</div></li>
-                </ul>
-             <div class="card-body">
-                <a href="#" class="btn btn-danger delete" _id="${itemBook.title}">Delete Book</a>
-            </div>
-         `
-      bookCards.appendChild(div)
-      
-    });
-    localStorage.setItem('books', JSON.stringify(books)) ; // guarda en el Local Storage el arreglo books como string 
-    console.log(books)
-
-}
