@@ -9,7 +9,7 @@ export function printBooks (books) {
     Object.values(books).forEach(itemBook =>{
 
         const div = document.createElement('div');
-        div.className = 'col-md-8 mb-3';
+        div.className = 'col-md-10 mb-3';
         div.innerHTML = `
             <div class="card shadow ">
             <img src=${itemBook.photoUrl} class="card-img-top" alt="...">
