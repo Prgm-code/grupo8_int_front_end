@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // consulta LocalStorage si existe "books" en Local Storage ... de existir lo extrae y lista elementos en la funcion printBooks()
-    if (localStorage.getItem('books') !=={} ){
+    if (localStorage.getItem('books') !=={} && localStorage.getItem('books') !== null  ){
         console.log('hay books')
         books = JSON.parse(localStorage.getItem('books')); // obtiene los datos como string por lo que se utiliza parse 
         printBooks(books);
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: priceInput.value,
             photoUrl: photoUrlInput.value,
         };
-        books[book.title] = {...book}; //inserta libro book en el arreglo books 
+        
         
 
         if (book.title === "") titleInput.classList.add('is-invalid');
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 input.classList.remove('is-invalid');
                
             });
-            
+            books[book.title] = {...book}; //inserta libro book en el arreglo books 
             renderMessage('New Book Added', 'success', '3000');
 
             printBooks(books); // llama a funcion para mostrar los books
