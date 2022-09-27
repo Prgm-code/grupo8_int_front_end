@@ -27,15 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         printCart(Cart);
     }
 
-    // Chequeo de class "is-invalid"
-    /*     allInputs.forEach(input => {
-            input.addEventListener('change', function (event) {
-                if (event.target.value !== "") {
-                    input.classList.remove('is-invalid');
-                }
-            })
-        }) */
-
+    
 });
 // FUNCION 1: TERMINA
 
@@ -100,27 +92,7 @@ const addCart = e => {
         printCart(Cart)
 
 
-        /* let Cart = {};
-        if (localStorage.getItem('Cart')) {
-            console.log('hay books en el carrito')
-            Cart = JSON.parse(localStorage.getItem('Cart')); // obtiene datos del carrito 
-            let bookCopy = { ...book }
-            if (Cart[e.target.id]) {
-                console.log(bookCopy['quantity'])
-                bookCopy['quantity'] = Cart[e.target.id]['quantity'] + 1
-            } else {
-                bookCopy['quantity'] = 1
-            }
 
-            Cart[e.target.id] = bookCopy
-            console.log(Cart)
-        } else {
-            Cart = [book]
-            console.log(Cart)
-        } */
-        /* 
-                localStorage.setItem('Cart', JSON.stringify(Cart)); // guarda en LocStorage el libro Sele
-                printCart(Cart) */
     }
     e.stopPropagation()
 }
