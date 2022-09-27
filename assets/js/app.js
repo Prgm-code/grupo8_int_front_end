@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // consulta LocalStorage si existe "books" en Local Storage ... de existir lo extrae y lista elementos en la funcion printBooks()
-    if (localStorage.getItem('books') !=={} ){
+    if (localStorage.getItem('books') !=={} && localStorage.getItem('books') !== null  ){
         console.log('hay books')
         books = JSON.parse(localStorage.getItem('books')); // obtiene los datos como string por lo que se utiliza parse 
         printBooks(books);

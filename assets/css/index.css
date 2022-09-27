@@ -23,7 +23,12 @@
 
  /* Clase para letras pequeñas MAC 9/25/22 */
  .small-font{
-   font-size: 0.8rem;
+   font-size: 1rem;
+ }
+
+  /* Clase para bacground gris MAC 9/26/22 */
+  .bg-lightcyan{
+   background-color: lightcyan;
  }
 
  .container-flex-object {
